@@ -1,0 +1,14 @@
+{
+  "name": "js",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "fp-ts": "^2.11.5",
+    "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.0",
+    "eslint-config-like": "^3.1.0",
+    "prettier": "^2.5.1"
+  }
+}
