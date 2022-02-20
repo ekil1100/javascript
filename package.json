@@ -3,6 +3,7 @@
   "type": "module",
   "private": true,
   "dependencies": {
+    "dayjs": "^1.10.7",
     "fp-ts": "^2.11.5",
     "ramda": "^0.27.1"
   },
