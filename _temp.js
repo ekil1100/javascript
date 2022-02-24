@@ -1,14 +1,10 @@
-;['1', '2', '3'].map(parseInt)
+function userCreator(name, score) {
+  this.name = name
+  this.score = score
+}
 
-var name = 'ok!'
-;(function () {
-  if (typeof name === 'undefined') {
-    var name = 'Jack'
-    console.log('Hi ' + name)
-  } else {
-    console.log('Hello ' + name)
-  }
-})()
-
-var val = 'smtg'
-console.log('Value is ' + (val === 'smtg') ? 'Something' : 'Nothing')
+userCreator.prototype
+userCreator.prototype.increment = function () {
+  this.score++
+}
+const user1 = new userCreator('Will', 3)
