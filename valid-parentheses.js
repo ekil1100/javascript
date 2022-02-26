@@ -1,8 +1,8 @@
-var isValid = function (s) {
+const isValid = function(s) {
   while (
-    s.indexOf('{}') !== -1 ||
-    s.indexOf('[]') !== -1 ||
-    s.indexOf('()') !== -1
+    s.includes('{}') ||
+    s.includes('[]') ||
+    s.includes('()')
   ) {
     s = s.replace('()', '')
     s = s.replace('{}', '')
@@ -10,3 +10,5 @@ var isValid = function (s) {
   }
   return s === ''
 }
+
+isValid()

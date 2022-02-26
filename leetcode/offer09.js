@@ -1,6 +1,6 @@
-// leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
+// https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/
 
-https: var CQueue = function () {
+const CQueue = function () {
   this.stack1 = []
   this.stack2 = []
 }
@@ -17,7 +17,7 @@ CQueue.prototype.appendTail = function (value) {
  * @return {number}
  */
 CQueue.prototype.deleteHead = function () {
-  if (this.stack1.length == 0 && this.stack2.length == 0) {
+  if (this.stack1.length === 0 && this.stack2.length === 0) {
     return -1
   }
 
@@ -26,7 +26,6 @@ CQueue.prototype.deleteHead = function () {
   }
 
   while (this.stack1.length > 0) {
-    console.log(x)
     this.stack2.push(this.stack1.pop())
     console.log(this.stack2)
   }
@@ -34,7 +33,7 @@ CQueue.prototype.deleteHead = function () {
   return this.stack2.pop()
 }
 
-var obj = new CQueue()
+const obj = new CQueue()
 obj.appendTail(5)
 obj.appendTail(2)
-var v = obj.deleteHead()
+obj.deleteHead()
