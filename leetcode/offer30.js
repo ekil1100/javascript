@@ -1,7 +1,7 @@
 /**
  * initialize your data structure here.
  */
-var MinStack = function () {
+const MinStack = function() {
   this._min = []
   this.stack = []
   this._top = undefined
@@ -11,13 +11,15 @@ var MinStack = function () {
  * @param {number} x
  * @return {void}
  */
-MinStack.prototype.push = function (x) {
+MinStack.prototype.push = function(x) {
   if (this._top === undefined) {
     this._min.push(x)
-  } else {
+  }
+  else {
     if (x < this._min[this._min.length - 1]) {
       this._min.push(x)
-    } else {
+    }
+    else {
       this._min.push(this._min[this._min.length - 1])
     }
   }
@@ -28,7 +30,7 @@ MinStack.prototype.push = function (x) {
 /**
  * @return {void}
  */
-MinStack.prototype.pop = function () {
+MinStack.prototype.pop = function() {
   this._min.pop()
   this._top = this.stack[this.stack.length - 2]
   return this.stack.pop()
@@ -37,18 +39,18 @@ MinStack.prototype.pop = function () {
 /**
  * @return {number}
  */
-MinStack.prototype.top = function () {
+MinStack.prototype.top = function() {
   return this._top
 }
 
 /**
  * @return {number}
  */
-MinStack.prototype.min = function () {
+MinStack.prototype.min = function() {
   return this._min[this._min.length - 1]
 }
 
-var obj = new MinStack()
+const obj = new MinStack()
 obj.push(-2)
 obj.push(0)
 obj.push(-1)
