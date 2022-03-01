@@ -4,21 +4,21 @@
  * @return {character}
  */
 const firstUniqChar = function(s) {
-  const map = s.split('').reduce((acc, cur) => {
-    if (acc.has(cur)) {
-      acc.set(cur, false)
-    }
-    else {
-      acc.set(cur, true)
-    }
-    return acc
-  }, new Map())
+    const map = s.split('').reduce((acc, cur) => {
+        if (acc.has(cur)) {
+            acc.set(cur, false)
+        }
+        else {
+            acc.set(cur, true)
+        }
+        return acc
+    }, new Map())
 
-  for (const c of s) {
-    if (map.get(c)) return c
-  }
+    for (const c of s) {
+        if (map.get(c)) return c
+    }
 
-  return ' '
+    return ' '
 }
 
 firstUniqChar('abaccdeff')

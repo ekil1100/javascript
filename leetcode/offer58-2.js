@@ -4,8 +4,8 @@
  * @param {number} n
  * @return {string}
  */
-var reverseLeftWords = function (s, n) {
-  return s.slice(n) + s.slice(0, n)
+const reverseLeftWords = function(s, n) {
+    return s.slice(n) + s.slice(0, n)
 }
 
 reverseLeftWords('abcdefg', 2)

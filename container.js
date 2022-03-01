@@ -8,8 +8,10 @@ const getVal = _.compose(_.map(_.prop('value')))
 
 // signIn :: String -> String -> Bool -> User
 const signIn = _.curry((username, password, rememberMe) => {
-  /* signing in */
+    /* signing in */
 })
 
-io.of(signIn).ap(getVal('#email')).ap(getVal('#password')).ap(IO.of(false))
+io.of(signIn).ap(getVal('#email'))
+    .ap(getVal('#password'))
+    .ap(IO.of(false))
 // IO({ id: 3, email: 'gg@allin.com' })

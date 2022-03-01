@@ -1,14 +1,14 @@
 const isValid = function(s) {
-  while (
-    s.includes('{}') ||
+    while (
+        s.includes('{}') ||
     s.includes('[]') ||
     s.includes('()')
-  ) {
-    s = s.replace('()', '')
-    s = s.replace('{}', '')
-    s = s.replace('[]', '')
-  }
-  return s === ''
+    ) {
+        s = s.replace('()', '')
+        s = s.replace('{}', '')
+        s = s.replace('[]', '')
+    }
+    return s === ''
 }
 
 isValid()

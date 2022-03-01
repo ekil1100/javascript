@@ -9,18 +9,18 @@
  * @param {ListNode} head
  * @return {number[]}
  */
-var reversePrint = function (head) {
-  if (!head) {
-    return []
-  }
-
-  function fn(head, reversed) {
-    if (head.next) {
-      reversed = fn(head.next, reversed)
+const reversePrint = function(head) {
+    if (!head) {
+        return []
     }
-    reversed.push(head.val)
-    return reversed
-  }
 
-  return fn(head, [])
+    function fn(head, reversed) {
+        if (head.next) {
+            reversed = fn(head.next, reversed)
+        }
+        reversed.push(head.val)
+        return reversed
+    }
+
+    return fn(head, [])
 }

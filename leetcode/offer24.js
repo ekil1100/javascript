@@ -31,22 +31,22 @@
 // }
 
 const reverseList = function(head) {
-  if (!head) return null
-  let curr = head
-  let next = null
-  let prev = null
-  while (curr) {
-    next = curr.next
-    curr.next = prev
-    prev = curr
-    curr = next
-  }
-  return prev
+    if (!head) return null
+    let curr = head
+    let next = null
+    let prev = null
+    while (curr) {
+        next = curr.next
+        curr.next = prev
+        prev = curr
+        curr = next
+    }
+    return prev
 }
 
 function ListNode(val) {
-  this.val = val
-  this.next = null
+    this.val = val
+    this.next = null
 }
 
 const head = new ListNode(1)

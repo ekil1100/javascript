@@ -11,21 +11,21 @@
  * @return {number[]}
  */
 const levelOrder = function(root) {
-  const res = []
-  if (!root) return res
-  const queue = [root]
-  while (queue.length !== 0) {
-    const node = queue.shift()
-    res.push(node.val)
-    if (node.left) queue.push(node.left)
-    if (node.right) queue.push(node.right)
-  }
-  return res
+    const res = []
+    if (!root) return res
+    const queue = [root]
+    while (queue.length !== 0) {
+        const node = queue.shift()
+        res.push(node.val)
+        if (node.left) queue.push(node.left)
+        if (node.right) queue.push(node.right)
+    }
+    return res
 }
 
 function TreeNode(val) {
-  this.val = val
-  this.left = this.right = null
+    this.val = val
+    this.left = this.right = null
 }
 
 const tree = new TreeNode(3)
