@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "eslint": "^8.10.0",
-    "eslint-config-like": "^4.2.0",
+    "eslint-config-like": "^4.2.1",
     "prettier": "^2.5.1",
     "vitest": "^0.5.9"
   }
