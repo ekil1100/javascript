@@ -8,7 +8,6 @@ const minArray = function(numbers) {
     let r = numbers.length - 1
     while (l < r) {
         const m = Math.floor((l + r) / 2)
-        console.log(l, m, r)
         if (numbers[m] > numbers[r]) {
             l = m + 1
         }
@@ -18,7 +17,6 @@ const minArray = function(numbers) {
         else {
             r--
         }
-        console.log(l, m, r)
     }
     return numbers[l]
 }
