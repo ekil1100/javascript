@@ -1,3 +1,9 @@
 {
-  "extends": ["like"]
+    "extends": ["like/ts"],
+    "rules": {
+        "@typescript-eslint/no-explicit-any": [
+            "error",
+            { "fixToUnknown": true }
+        ]
+    }
 }

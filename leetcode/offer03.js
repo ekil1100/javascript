@@ -5,7 +5,7 @@
  */
 const findRepeatNumber = function(nums) {
     const set = new Set()
-    for (n of nums) {
+    for (const n of nums) {
         if (set.has(n)) return n
         else set.add(n)
     }

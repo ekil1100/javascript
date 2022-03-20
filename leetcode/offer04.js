@@ -5,7 +5,7 @@
  * @return {boolean}
  */
 const findNumberIn2DArray = function(matrix, target) {
-    if (matrix.length == 0) return false
+    if (matrix.length === 0) return false
     let row = 0
     let col = matrix[0].length - 1
     while (row < matrix.length && col >= 0) {
