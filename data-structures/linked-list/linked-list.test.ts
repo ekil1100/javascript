@@ -22,7 +22,7 @@ describe('linked-list', () => {
     test('prepend', () => {
         const node = lln.create(1)
         const list = ll.create(1)
-        ll.prepend(2, list)
+        ll.prepend(2)(list)
         expect(list).toStrictEqual({
             head: {
                 value: 2,
