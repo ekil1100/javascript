@@ -39,9 +39,18 @@ export const prepend = curry(function <T>(value: T, list: LinkedList<T>): Linked
     return list
 })
 
-export function append() {
-    return null
-}
+export const append = curry(function <T>(value: T, list: LinkedList<T>): LinkedList<T> {
+    const node = lln.create(value)
+
+    if (list.tail) {
+        list.tail.next = node
+        list.tail = node
+    }
+
+    list.length += 1
+
+    return list
+})
 
 export function toString<T>(cb: (node?: LinkedListNode<T>) => string, list: LinkedList<T>): string {
     if (!list) {

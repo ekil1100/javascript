@@ -24,3 +24,5 @@ const reversePrint = function(head) {
 
     return fn(head, [])
 }
+
+reversePrint()

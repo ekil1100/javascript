@@ -33,9 +33,9 @@ describe('linked-list', () => {
         })
     })
 
-    test.skip('append', () => {
+    test('append', () => {
         const list = ll.create(1)
-        ll.append(2, list)
+        ll.append(2)(list)
         expect(list).toStrictEqual({
             head: {
                 value: 1,

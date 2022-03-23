@@ -45,5 +45,4 @@ head.next.random = head.next.next
 head.next.next.random = head.next.next.next.next
 head.next.next.next.random = null
 head.next.next.next.next.random = head
-const res = copyRandomList(head)
-console.log(res)
+copyRandomList(head)

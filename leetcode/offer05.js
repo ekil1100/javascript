@@ -8,3 +8,5 @@ const replaceSpace = function(s) {
         .map(x => (x === ' ' ? '%20' : x))
         .join('')
 }
+
+replaceSpace('a fa fa')

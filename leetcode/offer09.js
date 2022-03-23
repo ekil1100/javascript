@@ -27,7 +27,6 @@ CQueue.prototype.deleteHead = function() {
 
     while (this.stack1.length > 0) {
         this.stack2.push(this.stack1.pop())
-        console.log(this.stack2)
     }
 
     return this.stack2.pop()
