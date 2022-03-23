@@ -13,9 +13,9 @@ describe('linked-list-node', () => {
 
     test('toString', () => {
         const node = create(1)
-        const toSimpleString = toString(node => `${node.value}`)
+        const toSimpleString = toString(node => `${node.value}`, node)
         const toCrazyString = toString(() => 'xxx')
-        expect(toSimpleString(node)).toBe('1')
+        expect(toSimpleString).toBe('1')
         expect(toCrazyString(node)).toBe('xxx')
     })
 

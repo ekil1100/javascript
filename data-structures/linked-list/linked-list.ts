@@ -1,3 +1,4 @@
+import { curry } from '../../fp/curry'
 import type { LinkedListNode } from './linked-list-node'
 import * as lln from './linked-list-node'
 
@@ -25,7 +26,7 @@ export function create<T>(value?: T): LinkedList<T> {
     }
 }
 
-export function prepend<T>(value: T, list: LinkedList<T>): LinkedList<T> {
+export const prepend = curry(function <T>(value: T, list: LinkedList<T>): LinkedList<T> {
     const node = lln.create(value)
 
     if (list.head) {
@@ -36,6 +37,10 @@ export function prepend<T>(value: T, list: LinkedList<T>): LinkedList<T> {
     list.length += 1
 
     return list
+})
+
+export function append() {
+    return null
 }
 
 export function toString<T>(cb: (node?: LinkedListNode<T>) => string, list: LinkedList<T>): string {

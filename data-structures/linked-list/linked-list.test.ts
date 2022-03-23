@@ -33,5 +33,24 @@ describe('linked-list', () => {
         })
     })
 
+    test.skip('append', () => {
+        const list = ll.create(1)
+        ll.append(2, list)
+        expect(list).toStrictEqual({
+            head: {
+                value: 1,
+                next: {
+                    value: 2,
+                    next: null,
+                },
+            },
+            tail: {
+                value: 2,
+                next: null,
+            },
+            length: 2,
+        })
+    })
+
     test.skip('toString')
 })
