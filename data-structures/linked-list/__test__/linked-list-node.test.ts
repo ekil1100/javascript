@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { create, toString, toPrint } from './linked-list-node'
+import { create, toString, toPrint } from '../linked-list-node'
 
 describe('linked-list-node', () => {
     test('create', () => {

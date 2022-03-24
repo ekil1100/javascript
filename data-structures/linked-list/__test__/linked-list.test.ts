@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest'
-import * as lln from './linked-list-node'
-import * as ll from './linked-list'
+import * as lln from '../linked-list-node'
+import * as ll from '../linked-list'
 
 describe('linked-list', () => {
     test('create', () => {

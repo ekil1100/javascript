@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { compose } from './compose'
+import { compose } from '../compose'
 
 test('compose', () => {
     const fn = (x: number) => x + 1
