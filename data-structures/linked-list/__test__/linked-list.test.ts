@@ -78,8 +78,8 @@ describe('linked-list', () => {
         const list = ll.create(1)
         ll.append(2)(list)
         ll.append(3)(list)
-        const res = []
-        ll.each(node => res.push(node.value), list)
+        const res: number[] = []
+        ll.each(node => res.push(node.value as number))(list)
         expect(res).toStrictEqual([1, 2, 3])
     })
 })
