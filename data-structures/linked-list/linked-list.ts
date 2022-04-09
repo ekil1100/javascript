@@ -72,3 +72,32 @@ export const toString = curry(
 )
 
 export const toPrint = toString(lln.toPrint, ' -> ')
+
+export const toArray = curry(
+    <T>(list: LinkedList<T>): T[] => {
+        if (!list) {
+            return []
+        }
+        let node = list.head
+        const res = []
+        while (node) {
+            res.push(node.value)
+            node = node.next
+        }
+        return res
+    },
+)
+
+export const each = curry(
+    <T>(cb: (node: LinkedListNode<T>) => void, list: LinkedList<T>): LinkedList<T> => {
+        if (!list) {
+            return list
+        }
+        let node = list.head
+        while (node) {
+            cb(node)
+            node = node.next
+        }
+        return list
+    },
+)

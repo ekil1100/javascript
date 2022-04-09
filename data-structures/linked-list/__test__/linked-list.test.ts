@@ -66,4 +66,20 @@ describe('linked-list', () => {
         ll.append(3)(list)
         expect(ll.toPrint(list)).toBe('1 -> 2 -> 3')
     })
+
+    test('toArray', () => {
+        const list = ll.create(1)
+        ll.append(2)(list)
+        ll.append(3)(list)
+        expect(ll.toArray(list)).toStrictEqual([1, 2, 3])
+    })
+
+    test('each', () => {
+        const list = ll.create(1)
+        ll.append(2)(list)
+        ll.append(3)(list)
+        const res = []
+        ll.each(node => res.push(node.value), list)
+        expect(res).toStrictEqual([1, 2, 3])
+    })
 })
