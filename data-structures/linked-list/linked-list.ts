@@ -26,35 +26,49 @@ export function create<T>(value?: T): LinkedList<T> {
     }
 }
 
-export const prepend = curry(function <T>(value: T, list: LinkedList<T>): LinkedList<T> {
-    const node = lln.create(value)
+export const prepend = curry(
+    function <T>(value: T, list: LinkedList<T>): LinkedList<T> {
+        const node = lln.create(value)
 
-    if (list.head) {
-        node.next = list.head
-        list.head = node
-    }
+        if (list.head) {
+            node.next = list.head
+            list.head = node
+        }
 
-    list.length += 1
+        list.length += 1
 
-    return list
-})
+        return list
+    },
+)
 
-export const append = curry(function <T>(value: T, list: LinkedList<T>): LinkedList<T> {
-    const node = lln.create(value)
+export const append = curry(
+    function <T>(value: T, list: LinkedList<T>): LinkedList<T> {
+        const node = lln.create(value)
 
-    if (list.tail) {
-        list.tail.next = node
-        list.tail = node
-    }
+        if (list.tail) {
+            list.tail.next = node
+            list.tail = node
+        }
 
-    list.length += 1
+        list.length += 1
 
-    return list
-})
+        return list
+    },
+)
 
-export function toString<T>(cb: (node?: LinkedListNode<T>) => string, list: LinkedList<T>): string {
-    if (!list) {
-        return 'null'
-    }
-    return ''
-}
+export const toString = curry(
+    <T>(cb: (node: LinkedListNode<T>) => string, connector: string, list: LinkedList<T>): string => {
+        if (!list) {
+            return 'null'
+        }
+        let node = list.head
+        const res = []
+        while (node) {
+            res.push(cb(node))
+            node = node.next
+        }
+        return res.join(connector)
+    },
+)
+
+export const toPrint = toString(lln.toPrint, ' -> ')

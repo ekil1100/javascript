@@ -13,10 +13,10 @@ describe('linked-list-node', () => {
 
     test('toString', () => {
         const node = create(1)
-        const toSimpleString = toString(node => `${node.value}`, node)
-        const toCrazyString = toString(() => 'xxx')
-        expect(toSimpleString).toBe('1')
-        expect(toCrazyString(node)).toBe('xxx')
+        const fn1 = toString(node => `${node.value}`)
+        const fn2 = toString(() => 'xxx')
+        expect(fn1(node)).toBe('1')
+        expect(fn2(node)).toBe('xxx')
     })
 
     test('toPrint', () => {

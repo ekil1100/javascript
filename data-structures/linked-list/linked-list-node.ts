@@ -12,13 +12,12 @@ export function create<T>(value: T): LinkedListNode<T> {
     }
 }
 
-export const toString = curry(
-    function<T>(cb: (node: LinkedListNode<T>) => string,
-        node: LinkedListNode<T>): string {
-        if (!node) {
-            return 'null'
-        }
-        return cb(node)
-    })
+const defaultCallback = <T>(node: LinkedListNode<T>) => `${node.value}`
 
-export const toPrint = toString(node => `${node.value}`)
+export const toString = curry(
+    <T>(cb: (node: LinkedListNode<T>) => string, node: LinkedListNode<T>): string => {
+        return node ? cb(node) : 'null'
+    },
+)
+
+export const toPrint = toString(defaultCallback)

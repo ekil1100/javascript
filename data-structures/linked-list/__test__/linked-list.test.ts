@@ -52,5 +52,18 @@ describe('linked-list', () => {
         })
     })
 
-    test.skip('toString')
+    test('toString', () => {
+        const list = ll.create(1)
+        ll.append(2)(list)
+        ll.append(3)(list)
+        const fn1 = ll.toString(node => `${node.value}`, ' -> ')
+        expect(fn1(list)).toBe('1 -> 2 -> 3')
+    })
+
+    test('toPrint', () => {
+        const list = ll.create(1)
+        ll.append(2)(list)
+        ll.append(3)(list)
+        expect(ll.toPrint(list)).toBe('1 -> 2 -> 3')
+    })
 })
