@@ -58,6 +58,8 @@ describe('linked-list', () => {
         ll.append(3)(list)
         const fn1 = ll.toString(node => `${node.value}`, ' -> ')
         expect(fn1(list)).toBe('1 -> 2 -> 3')
+        // @ts-expect-error - this is a test
+        expect(fn1(undefined)).toBe('null')
     })
 
     test('toPrint', () => {
@@ -72,14 +74,21 @@ describe('linked-list', () => {
         ll.append(2)(list)
         ll.append(3)(list)
         expect(ll.toArray(list)).toStrictEqual([1, 2, 3])
+        // @ts-expect-error - this is a test
+        expect(ll.toArray(undefined)).toStrictEqual([])
     })
 
     test('each', () => {
         const list = ll.create(1)
         ll.append(2)(list)
         ll.append(3)(list)
-        const res: number[] = []
-        ll.each(node => res.push(node.value as number))(list)
+        let res: number[] = []
+        const f1 = ll.each(node => res.push(node.value as number))
+        f1(list)
         expect(res).toStrictEqual([1, 2, 3])
+        res = []
+        // @ts-expect-error - this is a test
+        f1(undefined)
+        expect(res).toStrictEqual([])
     })
 })

@@ -1,5 +1,11 @@
 import { expect, test } from 'vitest'
-import { merge, mergeSort, quickSort } from './sort'
+import { merge, mergeSort, quickSort, sort } from '../sort'
+
+test('sort', () => {
+    const list = [10, 5, 6, 4, 5, 6, 73, 2, 5, 7, 8, 9]
+    expect(sort(list)).toStrictEqual([2, 4, 5, 5, 5, 6, 6, 7, 8, 9, 10, 73])
+    expect(list).toStrictEqual([10, 5, 6, 4, 5, 6, 73, 2, 5, 7, 8, 9])
+})
 
 test('quick sort', () => {
     const list = [10, 5, 6, 4, 5, 6, 73, 2, 5, 7, 8, 9]

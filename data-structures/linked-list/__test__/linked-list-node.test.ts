@@ -17,6 +17,8 @@ describe('linked-list-node', () => {
         const fn2 = toString(() => 'xxx')
         expect(fn1(node)).toBe('1')
         expect(fn2(node)).toBe('xxx')
+        // @ts-expect-error - for test
+        expect(fn1(undefined)).toBe('')
     })
 
     test('toPrint', () => {

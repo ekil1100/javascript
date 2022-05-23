@@ -16,7 +16,7 @@ const defaultCallback = <T>(node: LinkedListNode<T>) => `${node.value}`
 
 export const toString = curry(
     <T>(cb: (node: LinkedListNode<T>) => string, node: LinkedListNode<T>): string => {
-        return node ? cb(node) : 'null'
+        return node ? cb(node) : ''
     },
 )
 

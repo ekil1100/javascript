@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "test": "vitest",
-        "cover": "vitest run --coverage"
+        "coverage": "vitest run --coverage"
     },
     "dependencies": {
         "ramda": "^0.28.0"
